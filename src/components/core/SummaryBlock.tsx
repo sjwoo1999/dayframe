@@ -10,10 +10,10 @@ export interface SummaryBlockProps {
 export function SummaryBlock({ title = "오늘의 요약", lines, className }: SummaryBlockProps) {
 	return (
 		<div className={twMerge("space-y-2", className)}>
-			<div className="text-[11px] font-semibold uppercase tracking-wider text-[--ll-gray-500]">{title}</div>
-			<div className="space-y-1 text-[13px] leading-5">
+			<div className="text-[var(--text-sm)] font-semibold text-[--ll-gray-700]">{title}</div>
+			<div className="space-y-2 text-[var(--text-md)] leading-6">
 				{lines.map((l, i) => (
-					<p key={i} className="text-[--ll-gray-800] dark:text-[--ll-gray-200]">{l}</p>
+					<p key={i} className="text-[--color-foreground] line-clamp-3">{l}</p>
 				))}
 			</div>
 		</div>
