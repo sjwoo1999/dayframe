@@ -14,7 +14,7 @@ function MoodSheet() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant="glow" aria-label="Add mood">감정</Button>
+				<Button variant="glow">감정</Button>
 			</SheetTrigger>
 			<SheetContent side="bottom" title="오늘의 기분">
 				<div className="max-w-sm mx-auto space-y-3">
@@ -41,7 +41,7 @@ function ExpenseSheet() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant="secondary" aria-label="Add expense">지출</Button>
+				<Button variant="secondary">지출</Button>
 			</SheetTrigger>
 			<SheetContent side="bottom" title="지출 입력">
 				<div className="max-w-sm mx-auto space-y-3">
@@ -67,7 +67,7 @@ function PhotoSheet() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant="outline" aria-label="Upload photo">사진</Button>
+				<Button variant="outline">사진</Button>
 			</SheetTrigger>
 			<SheetContent side="bottom" title="사진 추가">
 				<div className="max-w-sm mx-auto space-y-3">
@@ -92,7 +92,7 @@ function LocationSheet() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant="outline" aria-label="Add location">위치</Button>
+				<Button variant="outline">위치</Button>
 			</SheetTrigger>
 			<SheetContent side="bottom" title="위치 추가">
 				<div className="max-w-sm mx-auto space-y-3">

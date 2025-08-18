@@ -1,0 +1,29 @@
+   ▲ Next.js 15.4.6
+   - Local:        http://localhost:3000
+   - Network:      http://10.124.192.147:3000
+
+ ✓ Starting...
+ ✓ Ready in 1133ms
+ ○ Compiling /today ...
+ ✓ Compiled /today in 801ms (746 modules)
+ GET /today 200 in 1091ms
+ ✓ Compiled /favicon.ico in 217ms (474 modules)
+ GET /favicon.ico 200 in 293ms
+ GET /today 200 in 159ms
+ ✓ Compiled in 607ms (760 modules)
+ ✓ Compiled in 138ms (760 modules)
+ ✓ Compiled in 135ms (760 modules)
+ ✓ Compiled in 62ms (303 modules)
+ ✓ Compiled / in 267ms (773 modules)
+ GET / 307 in 393ms
+[ResponseAborted: ]
+ GET /today 200 in 82ms
+ GET / 307 in 21ms
+[ResponseAborted: ]
+ GET /today 200 in 33ms
+ ✓ Compiled in 27ms (290 modules)
+ ✓ Compiled in 55ms (304 modules)
+ GET /today 200 in 32ms
+ ✓ Compiled in 48ms (304 modules)
+ GET /today 200 in 20ms
+ ✓ Compiled in 50ms (304 modules)
