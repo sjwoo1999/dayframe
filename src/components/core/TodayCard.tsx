@@ -16,7 +16,7 @@ export function TodayCard({ score = 72, summary = ["오늘은 이동이 많았�
 	return (
 		<Card className="glass gradient-border card-rich">
 			<CardHeader className="flex flex-row items-center justify-between">
-				<CardTitle>Today</CardTitle>
+				<h2 className="text-sm font-semibold">Today</h2>
 				<div className="relative h-8 w-8">
 					<svg viewBox="0 0 36 36" className="h-8 w-8">
 						<defs>
