@@ -15,7 +15,7 @@ const tabs = [
 export function BottomNav() {
 	const pathname = usePathname();
 	return (
-		<nav className="fixed inset-x-0 bottom-0 z-40 bg-white/80 backdrop-blur border-t border-[--ll-gray-200]">
+		<nav className="fixed inset-x-0 bottom-0 z-[var(--z-nav)] bg-[--color-surface] bg-opacity-90 backdrop-blur border-t border-[--color-border]">
 			<ul className="mx-auto max-w-sm grid grid-cols-5 gap-1 px-2 py-2 pb-[calc(env(safe-area-inset-bottom)+8px)]">
 				{tabs.map((t) => {
 					const active = pathname?.startsWith(t.href);
@@ -24,7 +24,8 @@ export function BottomNav() {
 							<Link
 								href={t.href}
 								className={clsx(
-									"block text-center rounded-[--radius-md] px-2 py-1 text-xs font-medium",
+									"block text-center rounded-[--radius-md] px-2 text-xs font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--color-focus-ring]",
+									"min-h-[44px] grid place-items-center",
 									active ? "bg-[--ll-gray-900] text-white" : "text-[--ll-gray-700] hover:bg-[--ll-gray-100]"
 								)}
 								aria-current={active ? "page" : undefined}
