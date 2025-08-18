@@ -1,9 +1,19 @@
-/* Design Tokens for Dayframe */
+/* Design Tokens v2 for Dayframe */
 :root {
 	/* Brand */
-	--ll-color-primary: #F76241;
-	--ll-color-primary-600: #ef4e2b;
-	--ll-color-primary-700: #d44322;
+	--brand-primary: #F76241;
+	--brand-primary-600: #ef4e2b;
+	--brand-primary-700: #d44322;
+
+	/* Semantic Colors (Light) */
+	--color-surface: #ffffff;
+	--color-surface-elevated: #ffffff;
+	--color-text: #171717;
+	--color-muted: #6b7280;
+	--color-border: #e5e7eb;
+	--color-success: #16a34a;
+	--color-warn: #d97706;
+	--color-error: #dc2626;
 
 	/* Neutral palette */
 	--ll-gray-50: #fafafa;
@@ -16,13 +26,6 @@
 	--ll-gray-700: #374151;
 	--ll-gray-800: #1f2937;
 	--ll-gray-900: #111827;
-
-	/* Background/Foreground derived */
-	--background: #ffffff;
-	--foreground: #171717;
-
-	/* Focus ring */
-	--focus-ring-color: var(--ll-color-primary-700);
 
 	/* Radius */
 	--radius-8: 8px;
@@ -38,32 +41,77 @@
 	/* Typography */
 	--font-sans: ui-sans-serif, system-ui, -apple-system, "Noto Sans KR", "Apple SD Gothic Neo", Roboto, Arial, "Segoe UI", "Noto Sans", "Liberation Sans", sans-serif;
 	--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Noto Sans Mono", monospace;
+	--text-xs: 12px;
+	--text-sm: 14px;
+	--text-md: 16px;
+	--text-lg: 18px;
+	--text-xl: 20px;
+	--text-2xl: 24px;
+
+	/* Spacing scale (4/8 base) */
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 20px;
+	--space-6: 24px;
+
+	/* Z-index ramp */
+	--z-nav: 40;
+	--z-toast: 50;
+	--z-dialog: 60;
+
+	/* Focus ring & Motion */
+	--focus-ring-color: var(--brand-primary-700);
+	--motion-scale: 1; /* set to 0 when prefers-reduced-motion */
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
+		--color-surface: #0a0a0a;
+		--color-surface-elevated: #0f0f0f;
+		--color-text: #ededed;
+		--color-muted: #9ca3af;
+		--color-border: #262626;
 	}
 }
 
 @theme {
-	--color-primary: var(--ll-color-primary);
-	--color-primary-600: var(--ll-color-primary-600);
-	--color-primary-700: var(--ll-color-primary-700);
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
+	/* Brand */
+	--color-primary: var(--brand-primary);
+	--color-primary-600: var(--brand-primary-600);
+	--color-primary-700: var(--brand-primary-700);
+
+	/* Semantic */
+	--color-background: var(--color-surface);
+	--color-foreground: var(--color-text);
+	--color-muted: var(--color-muted);
+	--color-border: var(--color-border);
+	--color-success: var(--color-success);
+	--color-warn: var(--color-warn);
+	--color-error: var(--color-error);
 	--color-focus-ring: var(--focus-ring-color);
 
+	/* Radii */
 	--radius-sm: var(--radius-8);
 	--radius-md: var(--radius-12);
 	--radius-lg: var(--radius-16);
 	--radius-xl: var(--radius-24);
 
+	/* Shadows */
 	--shadow-sm: var(--shadow-1);
 	--shadow-md: var(--shadow-2);
 	--shadow-lg: var(--shadow-3);
 
+	/* Fonts */
 	--font-sans: var(--font-sans);
 	--font-mono: var(--font-mono);
+
+	/* Type scale */
+	--text-xs: var(--text-xs);
+	--text-sm: var(--text-sm);
+	--text-md: var(--text-md);
+	--text-lg: var(--text-lg);
+	--text-xl: var(--text-xl);
+	--text-2xl: var(--text-2xl);
 }

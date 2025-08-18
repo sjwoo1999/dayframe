@@ -6,9 +6,13 @@
 :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
 
 body {
-	background: radial-gradient(1200px 800px at 10% -10%, rgba(247,98,65,0.15), transparent), radial-gradient(900px 600px at 110% 10%, rgba(255,255,255,0.06), transparent), var(--background);
-	color: var(--foreground);
+	background: radial-gradient(1200px 800px at 10% -10%, rgba(247,98,65,0.12), transparent), radial-gradient(900px 600px at 110% 10%, rgba(255,255,255,0.05), transparent), var(--color-background);
+	color: var(--color-foreground);
 	font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* { animation: none !important; transition: none !important; }
 }
 
 .glass {
@@ -17,9 +21,7 @@ body {
 	-webkit-backdrop-filter: saturate(140%) blur(14px);
 }
 
-.gradient-border {
-	position: relative;
-}
+.gradient-border { position: relative; }
 .gradient-border::before {
 	content: "";
 	position: absolute; inset: -1px; z-index: -1; border-radius: inherit;
