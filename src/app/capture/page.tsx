@@ -29,15 +29,15 @@ function CaptureClient() {
 			<div className="mt-4">
 				{tab === "mood" && (
 					<div className="space-y-2">
-						<label className="text-sm">Mood (1-10)</label>
-						<Input type="number" min={1} max={10} defaultValue={6} />
+						<label htmlFor="mood-input" className="text-sm">Mood (1-10)</label>
+						<Input id="mood-input" type="number" min={1} max={10} defaultValue={6} />
 						<Button>Save</Button>
 					</div>
 				)}
 				{tab === "expense" && (
 					<div className="space-y-2">
-						<label className="text-sm">Amount</label>
-						<Input type="number" />
+						<label htmlFor="expense-amount" className="text-sm">Amount</label>
+						<Input id="expense-amount" type="number" />
 						<Button>Save</Button>
 					</div>
 				)}
@@ -49,8 +49,8 @@ function CaptureClient() {
 				)}
 				{tab === "location" && (
 					<div className="space-y-2">
-						<label className="text-sm">Label</label>
-						<Input />
+						<label htmlFor="location-label" className="text-sm">Label</label>
+						<Input id="location-label" />
 						<Button>Save</Button>
 					</div>
 				)}
