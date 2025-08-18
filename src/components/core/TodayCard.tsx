@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ScoreBadge } from "./ScoreBadge";
 import { SummaryBlock } from "./SummaryBlock";
 import { MovementMiniMap } from "./MovementMiniMap";
 import { SpendTile } from "./SpendTile";
@@ -15,7 +14,7 @@ export interface TodayCardProps {
 
 export function TodayCard({ score = 72, summary = ["오늘은 이동이 많았고 카페에 지출이 있었어요.", "컨디션이 다소 낮았네요. 내일은 20분 휴식 목표 어때요?"], spend = 18000, mood = 6 }: TodayCardProps) {
 	return (
-		<Card className="glass gradient-border">
+		<Card className="glass gradient-border card-rich">
 			<CardHeader className="flex flex-row items-center justify-between">
 				<CardTitle>Today</CardTitle>
 				<div className="relative h-8 w-8">
@@ -26,8 +25,8 @@ export function TodayCard({ score = 72, summary = ["오늘은 이동이 많았�
 								<stop offset="100%" stopColor="#ffb199" />
 							</linearGradient>
 						</defs>
-						<path d="M18 2 a 16 16 0 1 1 0 32 a 16 16 0 1 1 0 -32" fill="none" stroke="#eee" strokeWidth="4"/>
-						<path d="M18 2 a 16 16 0 1 1 0 32 a 16 16 0 1 1 0 -32" fill="none" stroke="url(#grad)" strokeWidth="4" strokeDasharray={`${(score/100)*100} 100`} strokeLinecap="round"/>
+						<path d="M18 2 a 16 16 0 1 1 0 32 a 16 16 0 1 1 0 -32" fill="none" stroke="#eee" strokeWidth="3"/>
+						<path className="ring-stroke" d="M18 2 a 16 16 0 1 1 0 32 a 16 16 0 1 1 0 -32" fill="none" stroke="url(#grad)" strokeWidth="3" strokeDasharray={`${(score/100)*100} 100`} strokeLinecap="round"/>
 					</svg>
 					<div className="absolute inset-0 grid place-items-center text-[11px] font-semibold text-[--color-foreground]">{score}</div>
 				</div>

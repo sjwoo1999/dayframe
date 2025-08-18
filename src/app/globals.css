@@ -6,7 +6,12 @@
 :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
 
 body {
-	background: radial-gradient(1200px 800px at 10% -10%, rgba(247,98,65,0.12), transparent), radial-gradient(900px 600px at 110% 10%, rgba(255,255,255,0.05), transparent), var(--color-background);
+	background:
+		radial-gradient(1200px 800px at 10% -10%, rgba(255,106,60,0.12), transparent),
+		radial-gradient(900px 600px at 110% 10%, rgba(255,177,153,0.10), transparent),
+		conic-gradient(from 220deg at 80% 20%, rgba(255,106,60,0.10), transparent 25%, rgba(255,177,153,0.08) 45%, transparent 60%),
+		repeating-linear-gradient(0deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02) 2px, transparent 2px, transparent 4px),
+		var(--color-background);
 	color: var(--color-foreground);
 	font-family: var(--font-sans);
 }
@@ -16,9 +21,24 @@ body {
 }
 
 .glass {
-	background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
+	background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.64));
 	backdrop-filter: saturate(140%) blur(14px);
 	-webkit-backdrop-filter: saturate(140%) blur(14px);
+}
+
+.card-rich {
+	background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+	border: 1px solid var(--color-border);
+	box-shadow: var(--shadow-md);
+}
+
+.ring-stroke {
+	filter: drop-shadow(0 0 6px rgba(255,106,60,0.35));
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ring-stroke { filter: none; }
+	.card-rich { box-shadow: none; }
 }
 
 .gradient-border { position: relative; }
