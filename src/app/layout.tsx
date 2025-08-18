@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ko">
-			<body className="antialiased">
+			<body className="antialiased pb-[calc(56px+env(safe-area-inset-bottom))]">
 				{children}
 				<div id="toast-root" aria-live="polite" aria-atomic="true" />
 			</body>

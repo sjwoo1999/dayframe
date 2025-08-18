@@ -2,6 +2,7 @@ import { TodayCard } from "@/components/core/TodayCard";
 import { QuickActionBar } from "@/components/core/QuickActionBar";
 import { Toaster } from "@/components/ui/toast";
 import { TodayTracker } from "./tracker";
+import { BottomNav } from "@/components/shell/BottomNav";
 
 export default function TodayPage() {
 	return (
@@ -15,6 +16,7 @@ export default function TodayPage() {
 					<QuickActionBar />
 				</div>
 			</div>
+			<BottomNav />
 		</main>
 	);
 }
