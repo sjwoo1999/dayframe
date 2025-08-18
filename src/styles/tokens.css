@@ -1,9 +1,9 @@
 /* Design Tokens v2 for Dayframe */
 :root {
 	/* Brand */
-	--brand-primary: #F76241;
-	--brand-primary-600: #ef4e2b;
-	--brand-primary-700: #d44322;
+	--brand-primary: #FF6A3C;
+	--brand-primary-600: #FF7A54;
+	--brand-primary-700: #E4572C;
 
 	/* Semantic Colors (Light) */
 	--color-surface: #ffffff;
