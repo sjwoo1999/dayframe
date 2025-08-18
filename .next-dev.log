@@ -27,3 +27,71 @@
  ✓ Compiled in 48ms (304 modules)
  GET /today 200 in 20ms
  ✓ Compiled in 50ms (304 modules)
+ GET /today 200 in 67ms
+ ✓ Compiled /favicon.ico in 165ms (486 modules)
+ GET /favicon.ico 200 in 230ms
+ GET /today 200 in 178ms
+ ✓ Compiled in 74ms (304 modules)
+ ✓ Compiled in 146ms (304 modules)
+ ⨯ ./src/app/today/page.tsx
+Error:   [31mx[0m `ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+   ,-[[36;1;4m/Users/_woo_s.j/Desktop/woo/workspace/dayframe/src/app/today/page.tsx[0m:3:1]
+ [2m1[0m | import { TodayCard } from "@/components/core/TodayCard";
+ [2m2[0m | import dynamic from "next/dynamic";
+ [2m3[0m | const QuickActionBar = dynamic(() => import("@/components/core/QuickActionBar").then(m => m.QuickActionBar), { ssr: false });
+   : [35;1m                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+ [2m4[0m | import { Toaster } from "@/components/ui/toast";
+ [2m5[0m | import { TodayTracker } from "./tracker";
+ [2m6[0m | import { BottomNav } from "@/components/shell/BottomNav";
+   `----
+
+Import trace for requested module:
+./src/app/today/page.tsx
+ ✓ Compiled in 69ms (222 modules)
+ ✓ Compiled in 530ms (762 modules)
+ GET /today 200 in 116ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 1360ms (1198 modules)
+ ⨯ Error: Cannot find module './991.js'
+Require stack:
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/.next/server/webpack-runtime.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/.next/server/app/favicon.ico/route.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/server/require.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/server/load-components.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/utils.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/swc/options.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/swc/index.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/server/config.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/server/next.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/server/lib/start-server.js
+    at <unknown> (.next/server/app/favicon.ico/route.js:1:68927)
+    at Object.<anonymous> (.next/server/app/favicon.ico/route.js:1:68973) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 1395ms
+ GET /settings 200 in 1502ms
+ GET /insights 200 in 1504ms
+ GET /history 200 in 1504ms
+ ⨯ [Error: Cannot find module './vendor-chunks/@swc+helpers@0.5.15.js'
+Require stack:
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/.next/server/webpack-runtime.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/.next/server/app/share/[id]/page.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/server/require.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/server/load-components.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/utils.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/server/dev/static-paths-worker.js
+- /Users/_woo_s.j/Desktop/woo/workspace/dayframe/node_modules/.pnpm/next@15.4.6_@playwright+test@1.54.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/compiled/jest-worker/processChild.js] {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/share/demo'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1322ms (1526 modules)
+ GET /share/demo 500 in 3390ms
+ GET /today 200 in 260ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 707ms (1545 modules)
