@@ -21,24 +21,33 @@ class MockAdapter implements DbAdapter {
 
 class SupabaseAdapter implements DbAdapter {
 	async loadToday(): Promise<Mock.TodayData> {
-		// TODO: Implement real aggregation across tables; use mock for now
+		// NOTE: placeholder aggregation until real queries are wired
 		return Mock.loadToday();
 	}
 	async addMood(value: number): Promise<Mock.TodayData> {
-		// TODO: Insert into checkins, return aggregated today data
-		return Mock.addMood(value);
+		if (!supabase) return Mock.addMood(value);
+		const user = (await supabase.auth.getUser()).data.user;
+		if (!user) return Mock.addMood(value);
+		await supabase.from("checkins").insert({ user_id: user.id, score: Math.max(1, Math.min(10, Math.round(value))) });
+		return this.loadToday();
 	}
 	async addExpense(item: Mock.ExpenseItem): Promise<Mock.TodayData> {
-		// TODO: Insert into expenses
-		return Mock.addExpense(item);
+		if (!supabase) return Mock.addExpense(item);
+		const user = (await supabase.auth.getUser()).data.user;
+		if (!user) return Mock.addExpense(item);
+		await supabase.from("expenses").insert({ user_id: user.id, amount: Math.max(0, Math.round(item.amount)), category: item.category, note: item.note });
+		return this.loadToday();
 	}
 	async addPhoto(count = 1): Promise<Mock.TodayData> {
-		// TODO: Upload to storage and record rows; mock count
+		// real upload omitted in Step A; keep mock behavior for now
 		return Mock.addPhoto(count);
 	}
 	async addLocation(loc: Mock.LocationItem): Promise<Mock.TodayData> {
-		// TODO: Insert into locations
-		return Mock.addLocation(loc);
+		if (!supabase) return Mock.addLocation(loc);
+		const user = (await supabase.auth.getUser()).data.user;
+		if (!user) return Mock.addLocation(loc);
+		await supabase.from("locations").insert({ user_id: user.id, lat: loc.lat, lng: loc.lng, label: loc.label });
+		return this.loadToday();
 	}
 }
 
