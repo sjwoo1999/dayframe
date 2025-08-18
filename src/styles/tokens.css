@@ -1,0 +1,69 @@
+/* Design Tokens for Dayframe */
+:root {
+	/* Brand */
+	--ll-color-primary: #F76241;
+	--ll-color-primary-600: #ef4e2b;
+	--ll-color-primary-700: #d44322;
+
+	/* Neutral palette */
+	--ll-gray-50: #fafafa;
+	--ll-gray-100: #f5f5f5;
+	--ll-gray-200: #e5e7eb;
+	--ll-gray-300: #d1d5db;
+	--ll-gray-400: #9ca3af;
+	--ll-gray-500: #6b7280;
+	--ll-gray-600: #4b5563;
+	--ll-gray-700: #374151;
+	--ll-gray-800: #1f2937;
+	--ll-gray-900: #111827;
+
+	/* Background/Foreground derived */
+	--background: #ffffff;
+	--foreground: #171717;
+
+	/* Focus ring */
+	--focus-ring-color: var(--ll-color-primary-700);
+
+	/* Radius */
+	--radius-8: 8px;
+	--radius-12: 12px;
+	--radius-16: 16px;
+	--radius-24: 24px;
+
+	/* Shadows */
+	--shadow-1: 0 1px 2px rgba(0,0,0,0.06), 0 1px 1px rgba(0,0,0,0.04);
+	--shadow-2: 0 4px 8px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.06);
+	--shadow-3: 0 12px 24px rgba(0,0,0,0.12), 0 6px 12px rgba(0,0,0,0.08);
+
+	/* Typography */
+	--font-sans: ui-sans-serif, system-ui, -apple-system, "Noto Sans KR", "Apple SD Gothic Neo", Roboto, Arial, "Segoe UI", "Noto Sans", "Liberation Sans", sans-serif;
+	--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Noto Sans Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+}
+
+@theme {
+	--color-primary: var(--ll-color-primary);
+	--color-primary-600: var(--ll-color-primary-600);
+	--color-primary-700: var(--ll-color-primary-700);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-focus-ring: var(--focus-ring-color);
+
+	--radius-sm: var(--radius-8);
+	--radius-md: var(--radius-12);
+	--radius-lg: var(--radius-16);
+	--radius-xl: var(--radius-24);
+
+	--shadow-sm: var(--shadow-1);
+	--shadow-md: var(--shadow-2);
+	--shadow-lg: var(--shadow-3);
+
+	--font-sans: var(--font-sans);
+	--font-mono: var(--font-mono);
+}

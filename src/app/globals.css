@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+@import "../styles/animations.css";
+
+* { outline: none; }
+:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+
+body {
+	background: radial-gradient(1200px 800px at 10% -10%, rgba(247,98,65,0.15), transparent), radial-gradient(900px 600px at 110% 10%, rgba(255,255,255,0.06), transparent), var(--background);
+	color: var(--foreground);
+	font-family: var(--font-sans);
+}
+
+.glass {
+	background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
+	backdrop-filter: saturate(140%) blur(14px);
+	-webkit-backdrop-filter: saturate(140%) blur(14px);
+}
+
+.gradient-border {
+	position: relative;
+}
+.gradient-border::before {
+	content: "";
+	position: absolute; inset: -1px; z-index: -1; border-radius: inherit;
+	background: linear-gradient(135deg, rgba(247,98,65,0.9), rgba(247,98,65,0.35), rgba(255,255,255,0.3));
+	filter: blur(0.5px);
+}
