@@ -13,27 +13,28 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 function baseClasses({ disabled }: { disabled?: boolean }) {
 	return clsx(
-		"inline-flex items-center justify-center whitespace-nowrap rounded-[--radius-md] font-medium transition-colors",
+		"inline-flex items-center justify-center whitespace-nowrap rounded-[--radius-md] font-medium transition-colors select-none",
 		"focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--color-focus-ring]",
+		"min-h-[44px]",
 		disabled && "opacity-60 pointer-events-none"
 	);
 }
 
 function variantClasses(variant: ButtonVariant): string {
 	switch (variant) {
-		case "secondary":
-			return "bg-[--ll-gray-900] text-white hover:opacity-90";
-		case "outline":
-			return "bg-white text-[--ll-gray-900] border border-[--ll-gray-200] hover:bg-[--ll-gray-50]";
-		case "ghost":
-			return "bg-transparent text-[--ll-gray-900] hover:bg-[--ll-gray-100]";
-		case "destructive":
-			return "bg-red-600 text-white hover:bg-red-700";
-		case "glow":
-			return "relative bg-[--color-primary-700] text-white shadow-[0_0_0_0_rgba(247,98,65,0.6)] hover:shadow-[0_0_24px_8px_rgba(247,98,65,0.45)] transition-shadow";
-		case "default":
-		default:
-			return "bg-[--color-primary-700] text-white hover:opacity-90";
+	case "secondary":
+	return "bg-[--ll-gray-900] text-white hover:opacity-90 focus-visible:opacity-95";
+	case "outline":
+	return "bg-[--color-surface] text-[--ll-gray-900] border border-[--color-border] hover:bg-[--ll-gray-50]";
+	case "ghost":
+	return "bg-transparent text-[--ll-gray-900] hover:bg-[--ll-gray-100]";
+	case "destructive":
+	return "bg-red-600 text-white hover:bg-red-700";
+	case "glow":
+	return "relative bg-[--color-primary-700] text-white shadow-[0_0_0_0_rgba(247,98,65,0.35)] hover:shadow-[0_0_18px_6px_rgba(247,98,65,0.35)] transition-shadow";
+	case "default":
+	default:
+	return "bg-[--color-primary-700] text-white hover:opacity-90";
 	}
 }
 
