@@ -37,6 +37,13 @@ export function HistoryListClient() {
     return () => { mounted = false; };
   }, [page]);
 
+  // refresh when broadcasted update happens
+  React.useEffect(() => {
+    const handler = () => setPage(0);
+    window.addEventListener('dayframe:updated', handler);
+    return () => window.removeEventListener('dayframe:updated', handler);
+  }, []);
+
   return (
     <div className="mt-3 space-y-2 text-sm">
       <ul className="space-y-2">

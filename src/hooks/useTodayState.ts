@@ -17,5 +17,13 @@ export function useTodayState(dateISO?: string) {
 		refresh,
 	}), [dateISO, refresh]);
 
+	React.useEffect(() => {
+		function onStorage(e: StorageEvent) {
+			if (!e.key || e.key.startsWith('dayframe:today:')) refresh();
+		}
+		window.addEventListener('storage', onStorage);
+		return () => window.removeEventListener('storage', onStorage);
+	}, [refresh]);
+
 	return { data, actions, totals: totals(data) } as const;
 }

@@ -38,10 +38,13 @@ export function loadToday(dateISO?: ISODate): TodayData {
 	}
 }
 
+import { broadcastUpdated } from "@/utils/events";
+
 export function saveToday(data: TodayData, dateISO?: ISODate): void {
 	if (typeof window === "undefined") return;
 	const next = { ...data, updatedAt: new Date().toISOString() } as TodayData;
 	localStorage.setItem(todayKey(dateISO), JSON.stringify(next));
+	broadcastUpdated();
 }
 
 export function addMood(value: number, dateISO?: ISODate): TodayData {
