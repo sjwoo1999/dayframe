@@ -17,7 +17,7 @@ async function runAxe(page: import('@playwright/test').Page) {
 }
 
 test.describe('Accessibility smoke', () => {
-  const paths = ['/today', '/capture', '/share/123'];
+  const paths = ['/today', '/capture', '/share/123', '/settings'];
   for (const p of paths) {
     test(`axe: ${p}`, async ({ page }) => {
       await page.goto(p);
