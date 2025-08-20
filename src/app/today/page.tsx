@@ -3,14 +3,15 @@ import { QuickActionsClient } from "./QuickActions.client";
 import { Toaster } from "@/components/ui/toast";
 import { TodayTracker } from "./tracker";
 import { BottomNav } from "@/components/shell/BottomNav";
+import { Header } from "@/components/shell/Header";
 
 export default function TodayPage() {
 	return (
-		<main className="mx-auto max-w-sm p-4 min-h-dvh bg-[--color-background] text-[--color-foreground]">
+		<main className="mx-auto max-w-sm min-h-dvh bg-[--color-background] text-[--color-foreground] pb-[calc(56px+env(safe-area-inset-bottom))]">
 			<Toaster position="top-center" richColors />
 			<TodayTracker />
-			<h1 className="sr-only">Today</h1>
-			<div className="space-y-4">
+			<Header title="Today" />
+			<div className="p-4 space-y-4">
 				<TodayCard />
 				<QuickActionsClient />
 			</div>

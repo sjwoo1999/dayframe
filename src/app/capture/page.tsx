@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { BottomNav } from "@/components/shell/BottomNav";
+import { Header } from "@/components/shell/Header";
 import { useTodayState } from "@/hooks/useTodayState";
 import { useRouter } from "next/navigation";
 import { toast } from "@/components/ui/toast";
@@ -70,11 +71,13 @@ function CaptureClient() {
 
 export default function CapturePage() {
 	return (
-		<main className="mx-auto max-w-sm p-4 min-h-dvh">
-			<h1 className="text-base font-semibold">Capture</h1>
-			<Suspense fallback={<p className="text-sm text-[--ll-gray-500]">Loading…</p>}>
-				<CaptureClient />
-			</Suspense>
+		<main className="mx-auto max-w-sm min-h-dvh bg-[--color-background] text-[--color-foreground] pb-[calc(56px+env(safe-area-inset-bottom))]">
+			<Header title="Capture" />
+			<div className="p-4">
+				<Suspense fallback={<p className="text-sm text-[--ll-gray-500]">Loading…</p>}>
+					<CaptureClient />
+				</Suspense>
+			</div>
 			<BottomNav />
 		</main>
 	);
