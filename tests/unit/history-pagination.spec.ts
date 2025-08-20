@@ -12,4 +12,8 @@ describe('buildHistoryKey', () => {
     expect(k1).toContain('tags=life,work');
     expect(k1).toContain('todayOnly=true');
   });
+  it('omits empty filters', () => {
+    const k = buildHistoryKey({ page: 0, pageSize: 10, start: '', end: ' ', tags: [' ', ''], category: '  ' });
+    expect(k).toBe('history:list:page=0:pageSize=10');
+  });
 });
