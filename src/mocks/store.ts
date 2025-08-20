@@ -79,3 +79,16 @@ export function totals(data: TodayData): { totalSpend: number; mood: number | un
 	const totalSpend = data.expenses.reduce((acc, e) => acc + (e.amount || 0), 0);
 	return { totalSpend, mood: data.mood, photoCount: data.photos ?? 0 };
 }
+
+export function clearDay(dateISO?: ISODate): TodayData {
+	const empty: TodayData = { expenses: [], photos: 0, locations: [], updatedAt: new Date().toISOString(), mood: undefined };
+	saveToday(empty, dateISO);
+	return empty;
+}
+
+export function updateMood(value: number | undefined, dateISO?: ISODate): TodayData {
+	const data = loadToday(dateISO);
+	data.mood = typeof value === 'number' ? Math.max(1, Math.min(10, Math.round(value))) : undefined;
+	saveToday(data, dateISO);
+	return data;
+}
