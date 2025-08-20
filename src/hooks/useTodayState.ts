@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { loadToday, addMood, addExpense, addPhoto, addLocation, clearDay, updateMood, type TodayData, type ExpenseItem, type LocationItem } from "@/mocks/store";
+import { loadToday, addMood, addExpense, addPhoto, addLocation, clearDay, updateMood, setSummary, type TodayData, type ExpenseItem, type LocationItem } from "@/mocks/store";
 import { totals } from "@/mocks/store";
 
 export function useTodayState(dateISO?: string) {
@@ -16,6 +16,7 @@ export function useTodayState(dateISO?: string) {
 		addLocation: (loc: LocationItem) => setData(addLocation(loc, dateISO)),
 		updateMood: (value: number | undefined) => setData(updateMood(value, dateISO)),
 		clearDay: () => setData(clearDay(dateISO)),
+		setSummary: (lines: string[], score: number | undefined, key: string) => setData(setSummary(lines, score, key, dateISO)),
 		refresh,
 	}), [dateISO, refresh]);
 

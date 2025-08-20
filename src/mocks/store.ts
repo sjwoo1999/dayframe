@@ -18,6 +18,9 @@ export interface TodayData {
 	photos: number; // count only in mock
 	locations: LocationItem[];
 	updatedAt: string;
+	summary?: string[];
+	score?: number;
+	summaryKey?: string;
 }
 
 function todayKey(dateISO?: ISODate): string {
@@ -89,6 +92,15 @@ export function clearDay(dateISO?: ISODate): TodayData {
 export function updateMood(value: number | undefined, dateISO?: ISODate): TodayData {
 	const data = loadToday(dateISO);
 	data.mood = typeof value === 'number' ? Math.max(1, Math.min(10, Math.round(value))) : undefined;
+	saveToday(data, dateISO);
+	return data;
+}
+
+export function setSummary(lines: string[], score: number | undefined, key: string, dateISO?: ISODate): TodayData {
+	const data = loadToday(dateISO);
+	data.summary = lines.slice(0, 4);
+	data.score = typeof score === 'number' ? Math.max(0, Math.min(100, Math.round(score))) : undefined;
+	data.summaryKey = key;
 	saveToday(data, dateISO);
 	return data;
 }
