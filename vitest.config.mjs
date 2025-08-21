@@ -15,6 +15,7 @@ export default defineConfig({
 		environment: "jsdom",
 		include: ["tests/unit/**/*.spec.ts"],
 		exclude: ["tests/e2e/**", "node_modules/**"],
+		testSetupFiles: [resolve(__dirname, "tests/setup.ts")],
 		coverage: {
 			reporter: ["text", "html"],
 		},
